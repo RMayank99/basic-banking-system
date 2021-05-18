@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 app.use(express.urlencoded({extended:false}));
 //app.use(express.static("./public"));
-app.use(express.static(path.join(__dirname,'/Public')));
+app.use(express.static(path.join(__dirname,'/public')));
 app.set("view engine","ejs");
 
 // mongoose.connect("mongodb+srv://Admin-Rao:54321@cluster0.jukqr.mongodb.net/bharatbankDB",{useNewUrlParser:true},{useUnifiedTopology: true});
