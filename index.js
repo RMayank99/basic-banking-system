@@ -7,6 +7,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'/public')));
 app.set("view engine","ejs");
 
+
+
 // mongoose.connect("mongodb+srv://Admin-Rao:54321@cluster0.jukqr.mongodb.net/bharatbankDB",{useNewUrlParser:true},{useUnifiedTopology: true});
 mongoose.connect("mongodb+srv://Admin-Rao:54321@cluster0.jukqr.mongodb.net/bharatbankDB?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology: true})
 const customerSchema={
@@ -278,7 +280,8 @@ app.post("/transfer",(req,res)=>{
 
 });
 
+const port = process.env.PORT || 3000;
 
-app.listen(3000 || process.env.PORT,()=>{
-    console.log("Server running at PORT 3000 ");
-})
+app.listen(port,()=>{
+    console.log("Server running at PORT");
+});
